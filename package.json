@@ -1,0 +1,28 @@
+{
+  "name": "mi-proyecto",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && npm run copy-views",
+    "copy-views": "cp -r src/views dist/views",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/app.ts"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
