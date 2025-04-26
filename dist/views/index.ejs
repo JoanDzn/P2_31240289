@@ -1,20 +1,131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/entrega2.png" type="image/png">
+    <title>MoviGo!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1><%= title %></h1>
-    <ul>
-      <li>Datos personales</li>
-      <li>Nombre: Joan Garcia</li>
-      <li>Cédula: 31.240.289</li>
-      <li>Seccion: 3</li>
-    </ul>
-  </div>
+    <main class="main">
+        <nav class="mainNav">
+            <div class="limit">
+                <img src="/images/entrega.png" alt="">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="mainHeader" id="inicio">
+            <div class="txt">
+                <h1>MoviGo!</h1>
+                <h2>¡TU MUDANZA FÁCIL!</h2>
+                <span>y sin estrés...</span>
+            </div>
+            <video muted autoplay loop >
+                <source src="/images/video.mp4">
+            </video>
+            <a href="#servicios" class="icon"  id="servicios">
+                <span>Desliza para más información</span>
+                <img src="/images/icon.png" alt="">
+
+            </a>
+        </header>
+        <section class="mainSection">
+            <h2 class="title_limit">¿Qué ofrecemos en <i><b>MoviGo!</b></i>?</h2>
+                <section class="servicios">
+                    <section class="servicios_box">
+                        <div class="imgser">
+                            <img src="/images/1.avif" alt="">
+                        </div>                 
+                        <div class="limitpad">
+                            <h3>MOVI24H</h3>
+                            <span class="ss">Para usuarios comunes.</span>
+                            <span>En 24 Horas tendrás todas tus pertenencias en su destino con la máxima tranquilidad y confianza que te ofrece <i><b>MoviGo!</b></i>.</span>
+                            <span class="ss2"><i>Desde <b>199$</b></i></span>
+                            <a href="tel:+584128654997">SOLICITA ESTE SERVICIO</a>  
+                        </div>                 
+                    </section>
+                    <section class="servicios_box">
+                        <div class="imgser">
+                            <img src="/images/2.jpg" alt="">
+                        </div>
+                        <div class="limitpad">
+                            <h3>MOVI365</h3>
+                            <span class="ss">Para grandes empresas.</span>
+                            <span>Si eres una empresa, <i><b>MoviGo!</b></i> te ofrece un servicio anual de movilización y embalaje optimizado para mover tus productos por todo el territorio nacional.</span>
+                            <span class="ss2"><i>Desde <b>1299$/año</b></i></span>
+                            <a href="tel:+584128654997">SOLICITA ESTE SERVICIO</a>  
+                        </div>      
+                    </section>
+                    <section class="servicios_box">
+                        <div class="imgser">
+                            <img src="/images/3.webp" alt="">
+                        </div>                           
+                        <div class="limitpad">
+                            <h3>MOVI180</h3>
+                            <span class="ss">Para pequeñas empresas.</span>
+                            <span>Si tienes un pequeño negocio o franquicia y deseas cambiar de localidad, <i><b>MoviGo!</b></i> te ofrece un servicio de movilización de toda tu maquinaria a tu nueva locación.</span>
+                            <span class="ss2"><i>Desde <b>499$</b></i></span>
+                            <a href="tel:+584128654997" id="beneficios">SOLICITA ESTE SERVICIO</a>  
+                        </div>                
+                    </section>
+                </section>
+            <div class="limit" >    
+                <h2 class="title_limit">¿Por qué elegir <i><b>MoviGo!</b></i>?</h2>   
+                <section class="prod">
+                    <div class="prod__imgprod">
+                        <img src="/images/1prod.webp" alt="">
+                    </div>
+                    <img src="/images/1img.png" alt="" class="prod__img prod__img--1">
+                    <article class="txt">
+                        <h2>Mudanzas Ágiles</h2>
+                        <span><i><b>MoviGo!</b></i> se enfoca en la eficiencia y la rapidez. Ofrecemos un servicio de mudanza y embalaje optimizado para que nuestros clientes experimenten una transición a su nuevo hogar o espacio de trabajo de la manera más fluida y sencilla posible.</span>
+                    </article>
+                </section>
+                <section class="prod">
+                    <article class="txt">
+                        <h2>Solución Integral</h2>
+                        <span><i><b>MoviGo!</b></i> ofrece un servicio completo que abarca tanto el embalaje como el transporte. Esto significa que nuestros clientes no tienen que coordinar múltiples proveedores ni preocuparse por la logística compleja. </span>
+                    </article>
+                    <img src="/images/2img.png" alt="" class="prod__img prod__img--2">
+                    <div class="prod__imgprod">
+                        <img src="/images/2prod.jpg" alt="">
+                    </div>
+                </section>
+                <section class="prod">
+                    <div class="prod__imgprod">
+                        <img src="/images/3prod.jpg" alt="">
+                    </div>
+                    <img src="/images/3img.png" alt="" class="prod__img prod__img--3">
+                    <article class="txt">
+                        <h2>Embalaje Profesional</h2>
+                        <span>Entendemos el valor, tanto económico como sentimental, de las pertenencias de nuestros clientes. <i><b>MoviGo!</b></i> garantiza un servicio de embalaje profesional utilizando materiales de alta calidad y técnicas especializadas para proteger cada artículo durante el traslado.</span>
+                    </article>
+                </section>
+            </div>
+            <h2 class="title_limit">¡Contáctanos!</h2>
+        </section>
+        <div class="redes" id="contacto">
+            <div class="redes__w">
+                <a href="https://wa.me/584128654997" target="_blank"><img src="/images/whatsapp.png" alt=""></a>
+            </div>
+            <div class="redes__i">
+                <a href="https://instagram.com/joanjose_22" target="_blank"><img src="/images/instagram.png" alt=""></a>
+            </div>
+            <div class="redes__t">
+                <a href="https://x.com/normalguyontw" target="_blank"><img src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+        <footer class="mainFooter">
+            <img src="/images/entrega2.png" alt="">
+            <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-0000000-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
+        </footer>
+    </main>
 </body>
 </html>
