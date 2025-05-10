@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/entrega2.png" type="image/png">
+    <title>MoviGo!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <main class="main">
+        <nav class="mainNav">
+            <div class="limit">
+                <img src="/images/entrega.png" alt="">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="/pagos">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <h2 class="title_limit">¡Sistema de Pago!</h2> 
+
+        <div class="container">
+                
+                <form action="/pagos" method="post" class="form">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Titular</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tarjeta">Número de Tarjeta</label>
+                        <input type= "number" id="tarjeta" name="tarjeta" min="0" max="9999999999999999" required>
+                    </div>
+
+                    <div class="form-group">  
+                        <label for="fecha">Fecha de Vencimiento</label>
+                        <div class="fecha_vencimiento">
+                            <input type="number" id="mes" name="mes" placeholder="Mes" min="1" max="12" required>
+                            <input type="number" id="ano" name="ano" placeholder="Año" min="2025" max="2035" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv">Codigo de Seguridad</label>
+                        <input type="number" id="cvv" name="cvv" minlength="3" min="0" max="999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monto">Monto a Pagar</label>
+                        <input type="number" id="monto" name="monto" value="1299" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="moneda">Moneda</label>
+                        <select name="moneda" id="moneda">
+                            <option value="dolares">Dólares ($)</option>
+                            <option value="bolivares">Bolivares (Bs)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <img src="/images/5prod.jpg" alt="">
+            </div>
+
+
+
+
+
+
+
+
+
+    </main>
+</body>
