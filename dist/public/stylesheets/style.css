@@ -46,7 +46,9 @@ a{
 }
 
 .main_pagos{
+  margin-top: 0px;
   background-color: #dedede;
+  padding: 5rem 0rem 0rem 0rem;
 }
 
 .mainNav{
