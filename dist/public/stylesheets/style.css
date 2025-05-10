@@ -45,6 +45,10 @@ a{
   width: 100%;
 }
 
+.main_pagos{
+  background-color: #dedede;
+}
+
 .mainNav{
   z-index: 1000;
   width: 100%;
@@ -576,9 +580,8 @@ video{
 }
 
 .h2_pagos{
-  margin-top: 140px;
+  margin-top: 170px;
 }
-
 
 @media (max-width:1350px) {
   .mainHeader .txt h2{

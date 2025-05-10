@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <main class="main">
+    <main class="main main_pagos">
         <nav class="mainNav">
             <div class="limit">
                 <img src="/images/entrega.png" alt="">
@@ -34,17 +34,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre">Nombre del Titular</label>
+                        <label for="nombre">Nombre del Titular:</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="tarjeta">Número de Tarjeta</label>
+                        <label for="tarjeta">Número de Tarjeta:</label>
                         <input type= "number" id="tarjeta" name="tarjeta" min="0" max="9999999999999999" required>
                     </div>
 
                     <div class="form-group">  
-                        <label for="fecha">Fecha de Vencimiento</label>
+                        <label for="fecha">Fecha de Vencimiento:</label>
                         <div class="fecha_vencimiento">
                             <input type="number" id="mes" name="mes" placeholder="Mes" min="1" max="12" required>
                             <input type="number" id="ano" name="ano" placeholder="Año" min="2025" max="2035" required>
@@ -53,17 +53,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cvv">Codigo de Seguridad</label>
+                        <label for="cvv">Codigo de Seguridad:</label>
                         <input type="number" id="cvv" name="cvv" minlength="3" min="0" max="999" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="monto">Monto a Pagar</label>
+                        <label for="monto">Monto a Pagar:</label>
                         <input type="number" id="monto" name="monto" value="1299" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="moneda">Moneda</label>
+                        <label for="moneda">Moneda:</label>
                         <select name="moneda" id="moneda">
                             <option value="dolares">Dólares ($)</option>
                             <option value="bolivares">Bolivares (Bs)</option>
@@ -74,9 +74,23 @@
                 </form>
                 <img src="/images/5prod.jpg" alt="">
             </div>
-
-
-            <script>
+        <div class="redes">
+            <div class="redes__w">
+                <a href="https://wa.me/584128654997" target="_blank"><img src="/images/whatsapp.png" alt=""></a>
+            </div>
+            <div class="redes__i">
+                <a href="https://instagram.com/joanjose_22" target="_blank"><img src="/images/instagram.png" alt=""></a>
+            </div>
+            <div class="redes__t">
+                <a href="https://x.com/normalguyontw" target="_blank"><img src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+        <footer class="mainFooter">
+            <img src="/images/entrega2.png" alt="">
+            <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
+        </footer>
+    </main>
+     <script>
                 const form = document.querySelector('.form');
                 const button = document.querySelector('.but');
 
@@ -87,11 +101,4 @@
                     alert('¡Gracias por tu pago!');
                 });
             </script>
-
-
-
-
-
-
-    </main>
 </body>
