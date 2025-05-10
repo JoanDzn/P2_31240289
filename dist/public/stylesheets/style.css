@@ -579,9 +579,6 @@ video{
   scale: 1.02;
 }
 
-.h2_pagos{
-  margin-top: 170px;
-}
 
 @media (max-width:1350px) {
   .mainHeader .txt h2{
