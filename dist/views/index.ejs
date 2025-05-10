@@ -138,7 +138,7 @@
                         <textarea id="mensaje" name="mensaje" required=""></textarea>
                     </div>
 
-                    <button type="submit">Enviar Comentario</button>
+                    <button type="submit" class="but">Enviar Comentario</button>
                 </form>
                 
             </div>
@@ -159,7 +159,17 @@
             <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
         </footer>
     </main>
+         <script>
+                const form = document.querySelector('.form');
+                const button = document.querySelector('.but');
 
+                form.addEventListener('submit', function() {
+                    alert('Mensaje enviado');
+                });
+                button.addEventListener('click', function() {
+                    alert('¡Gracias por tu comentario!');
+                });
+            </script>
     
 </body>
 </html>
