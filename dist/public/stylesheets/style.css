@@ -186,11 +186,16 @@ a{
 }
 
 .servicios .servicios_box .ss2{
-  margin: 1rem 0rem;
+  margin: 1rem 0rem 0rem 0rem;
   font-size: 2rem;
   text-align: center;
 }
 
+.servicios .servicios_box .ss3{
+  margin: 0rem 0rem 1rem 0rem;
+  font-size: 1rem;
+  text-align: center;
+}
 
 .mainHeader {
   margin-bottom: 2rem;
@@ -569,7 +574,9 @@ video{
   scale: 1.02;
 }
 
-
+.h2_pagos{
+  margin-top: 140px;
+}
 
 @media (max-width:1350px) {
   .mainHeader .txt h2{

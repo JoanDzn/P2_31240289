@@ -14,16 +14,16 @@
             <div class="limit">
                 <img src="/images/entrega.png" alt="">
                 <ul class="menu">
-                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="/index.ejs">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="/pagos">Contacto</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </nav>
 
 
-        <h2 class="title_limit">¡Sistema de Pago!</h2> 
+        <h2 class="title_limit h2_pagos">¡Sistema de Pago!</h2> 
 
         <div class="container">
                 
@@ -70,13 +70,24 @@
                         </select>
                     </div>
 
-                    <button type="submit">Enviar</button>
+                    <button type="submit" class="but">Enviar</button>
                 </form>
                 <img src="/images/5prod.jpg" alt="">
             </div>
 
 
+            <script>
+                const form = document.querySelector('.form');
+                const button = document.querySelector('.but');
 
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Formulario enviado');
+                });
+                button.addEventListener('click', function() {
+                    alert('¡Gracias por tu pago!');
+                });
+            </script>
 
 
 
