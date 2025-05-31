@@ -59,6 +59,9 @@ router.post('/contacto', async function (req, res, next) {
         rejectUnauthorized: false
     }
     });
+    const siteKey = process.env.RECAPTCHA_SECRET_KEY;
+    const token = req.body['g-recaptcha-response'];
+    const recaptchaResponse = await axios.post<RecaptchaResponse>(`https://www.google.com/recaptcha/api/siteverify?secret=${siteKey}&response=${token}`);
 
         const { nombre, email, telefono, mensaje } = req.body;
         console.log(req.body);
