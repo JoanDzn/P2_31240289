@@ -113,11 +113,11 @@ router.post('/payments', async function (req, res, next) {
     const {nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda} = req.body;
     console.log(req.body);
         const datapayment ={
-            "amount": monto,
-            "card-number": tarjeta,
-            "cvv": cvv,
-            "expiration-month": mes,
-            "expiration-year": ano,
+            "amount":parseFloat(monto),
+            "card-number": parseInt(tarjeta),
+            "cvv": parseInt (cvv),
+            "expiration-month": parseInt (mes),
+            "expiration-year": parseInt (ano),
             "full-name": nombre,
             "currency": moneda,
             "description": "Pago por servicio de MovGo!",
