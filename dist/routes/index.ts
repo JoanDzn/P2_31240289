@@ -109,6 +109,7 @@ router.post('/contacto', async function (req, res, next) {
 
 
 router.post('/payments', async function (req, res, next) {
+
     const {nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda} = req.body;
     console.log(req.body);
         const datapayment ={
@@ -122,17 +123,15 @@ router.post('/payments', async function (req, res, next) {
             "description": "Pago por servicio de MovGo!",
             "reference": uuidv4()
         }
-        console.log( datapayment);
+        console.log(datapayment);
         try {
             const paymentResponse = await axios.post('https://fakepayment.onrender.com/payments', datapayment,{ headers:{ Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmFrZSBwYXltZW50IiwiZGF0ZSI6IjIwMjUtMDUtMzFUMTU6MTg6NTIuODgwWiIsImlhdCI6MTc0ODcwNDczMn0.-7aFpxLfee-JVHPZXfGaXVImBklrkZeulh5MNQjDWqc' }});
-            const telefonoNum = parseInt(telefono, 10);
-            const montoNum = parseFloat(monto);
 
-            await contacto.create2(nombre, email, telefonoNum, direccion, tarjeta, mes, ano, cvv, montoNum, moneda);
+            await contacto.create2(nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda);
 
                 res.render('pagos', {
                     title: 'Compra del Servicio',
-                    siteKey: process.env.site_key,
+                    siteKey: process.env.RECAPTCHA_SITE_KEY,
                     paymentResult: paymentResponse.data
                 });
             

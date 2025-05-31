@@ -2,7 +2,7 @@ import db from './sqlite';
 
 
 export default {
-    create1 (nombre: any, email:any, telefono:any, mensaje:any, pais:any) {
+    create1 (nombre: string, email:string, telefono:number, mensaje:string, pais:string) {
         return new Promise((resolve, reject) => {
             const sql1 = `INSERT INTO contacto (nombre, email, telefono, mensaje, pais) VALUES (?, ?, ?, ?, ?)`;
 
@@ -13,7 +13,7 @@ export default {
         });
     },
 
-    create2 (nombre: any, email:any, telefono:any, direccion:any, tarjeta:any, mes:any, ano:any, cvv:any, monto:any, moneda:any) {
+    create2 (nombre: string, email:string, telefono:number, direccion:string, tarjeta:number, mes:number, ano:number, cvv:number, monto:number, moneda:string) {
         return new Promise((resolve, reject) => {
             const sql2 = `INSERT INTO pagos (nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
