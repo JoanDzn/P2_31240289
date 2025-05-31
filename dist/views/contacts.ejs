@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/entrega2.png" type="image/png">
+    <title>MoviGo!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <main class="main">
+        <nav class="mainNav">
+            <div class="limit">
+                <img src="/images/entrega.png" alt="">
+                <ul class="menu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="main_contacts">
+            <div class="limit">
+            <h2>Usuarios Registrados</h2>
+
+            <% if (contactos && contactos.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% contactos.forEach(function(contacto) { %>
+                            <tr>
+                                <td><%= contacto.id %></td>
+                                <td><%= contacto.nombre %></td>
+                                <td><%= contacto.email %></td>
+                                <td><%= contacto.telefono %></td>
+                                <td><%= contacto.mensaje %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No hay usuarios registrados en la base de datos.</p>
+            <% } %>
+            </div>
+        </nav>
+        <div class="redes">
+            <div class="redes__w">
+                <a href="https://wa.me/584128654997" target="_blank"><img src="/images/whatsapp.png" alt=""></a>
+            </div>
+            <div class="redes__i">
+                <a href="https://instagram.com/joanjose_22" target="_blank"><img src="/images/instagram.png" alt=""></a>
+            </div>
+            <div class="redes__t">
+                <a href="https://x.com/normalguyontw" target="_blank"><img src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+        <footer class="mainFooter">
+            <img src="/images/entrega2.png" alt="">
+            <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
+        </footer>
+    </main>
+</body>

@@ -7,6 +7,15 @@
     <link rel="icon" href="/images/entrega2.png" type="image/png">
     <title>MoviGo!</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YP4J90V4ZC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YP4J90V4ZC');
+    </script>
 </head>
 <body>
     <main class="main">
@@ -62,7 +71,7 @@
                             <span>Si eres una empresa, <i><b>MoviGo!</b></i> te ofrece un servicio anual de movilización y embalaje optimizado para mover tus productos por todo el territorio nacional.</span>
                             <span class="ss2"><i>Desde <b>1299$/año</b></i></span>
                             <span class="ss3">Pago con Tarjeta</span>
-                            <a href="/pagos">SOLICITA ESTE SERVICIO</a>  
+                            <a href="/payments">SOLICITA ESTE SERVICIO</a>  
                         </div>      
                     </section>
                     <section class="servicios_box">
@@ -115,7 +124,8 @@
             <h2 class="title_limit" id="contacto">¡Contáctanos!</h2>
             <div class="container">
                 <img src="/images/4prod.avif" alt="">
-                <form action="/pagos" method="post" class="form">
+
+                <form action="/contacto" method="post" class="form">
                     <div class="form-group">
                         <label for="nombre">Nombres:</label>
                         <input type="text" id="nombre" name="nombre" required>
@@ -137,7 +147,8 @@
                         <label for="fecha">Comentario:</label>
                         <textarea id="mensaje" name="mensaje" required=""></textarea>
                     </div>
-
+                    <div class="g-recaptcha" data-sitekey="6LfsPUorAAAAAHbZQg6yNoywsyb_eP6KjkAevG71" data-action="LOGIN"></div>
+                    <br/>
                     <button type="submit" class="but">Enviar Comentario</button>
                 </form>
                 
@@ -159,17 +170,25 @@
             <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
         </footer>
     </main>
-         <script>
-                const form = document.querySelector('.form');
-                const button = document.querySelector('.but');
 
-                form.addEventListener('submit', function() {
-                    alert('Mensaje enviado');
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form[action="/contacto"]');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    // Obtiene el valor del token de reCAPTCHA
+                    const recaptcha = document.querySelector('[name="g-recaptcha-response"]');
+                    if (!recaptcha || recaptcha.value === "") {
+                        e.preventDefault();
+                        alert('Por favor, completa el reCAPTCHA antes de enviar el formulario.');
+                    } else {
+                        // Aquí puedes manejar el envío del formulario si el reCAPTCHA está completo
+                        alert('¡Gracias por tu comentario!');
+                    }
                 });
-                button.addEventListener('click', function() {
-                    alert('¡Gracias por tu comentario!');
-                });
-            </script>
+            }
+        });
+    </script>
     
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="icon" href="/images/entrega2.png" type="image/png">
     <title>MoviGo!</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 </head>
 <body>
     <main class="main main_pagos">
@@ -25,7 +26,7 @@
 
         <div class="container container_pagos">
                 
-                <form action="/pagos" method="post" class="form">
+                <form action="/payments" method="post" class="form">
                     <h2>¡Realiza tu pago!</h2>
 
                     <div class="form-group">
@@ -65,11 +66,12 @@
                     <div class="form-group">
                         <label for="moneda">Moneda:</label>
                         <select name="moneda" id="moneda">
-                            <option value="dolares">Dólares ($)</option>
-                            <option value="bolivares">Bolivares (Bs)</option>
+                            <option value="USD">Dólares ($)</option>
+                            <option value="VES">Bolivares (Bs)</option>
                         </select>
                     </div>
-
+                    <div class="g-recaptcha" data-sitekey="6LfsPUorAAAAAHbZQg6yNoywsyb_eP6KjkAevG71" data-action="LOGIN"></div>
+                    <br/>
                     <button type="submit" class="but">Enviar</button>
                 </form>
                 <img src="/images/5prod.jpg" alt="">
@@ -90,15 +92,23 @@
             <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
         </footer>
     </main>
-     <script>
-                const form = document.querySelector('.form');
-                const button = document.querySelector('.but');
 
-                form.addEventListener('submit', function() {
-                    alert('Formulario enviado');
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form[action="/pagos"]');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    // Obtiene el valor del token de reCAPTCHA
+                    const recaptcha = document.querySelector('[name="g-recaptcha-response"]');
+                    if (!recaptcha || recaptcha.value === "") {
+                        e.preventDefault();
+                        alert('Por favor, completa el reCAPTCHA antes de enviar el formulario.');
+                    } else {
+                        // Aquí puedes manejar el envío del formulario si el reCAPTCHA está completo
+                        alert('¡Gracias por tu pago!');
+                    }
                 });
-                button.addEventListener('click', function() {
-                    alert('¡Gracias por tu pago!');
-                });
-            </script>
+            }
+        });
+    </script>
 </body>
