@@ -125,8 +125,10 @@ router.post('/payments', async function (req, res, next) {
         console.log( datapayment);
         try {
             const paymentResponse = await axios.post('https://fakepayment.onrender.com/payments', datapayment,{ headers:{ Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmFrZSBwYXltZW50IiwiZGF0ZSI6IjIwMjUtMDUtMzFUMTU6MTg6NTIuODgwWiIsImlhdCI6MTc0ODcwNDczMn0.-7aFpxLfee-JVHPZXfGaXVImBklrkZeulh5MNQjDWqc' }});
-            
-            await contacto.create2(nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda);
+            const telefonoNum = parseInt(telefono, 10);
+            const montoNum = parseFloat(monto);
+
+            await contacto.create2(nombre, email, telefonoNum, direccion, tarjeta, mes, ano, cvv, montoNum, moneda);
 
                 res.render('pagos', {
                     title: 'Compra del Servicio',
@@ -134,10 +136,10 @@ router.post('/payments', async function (req, res, next) {
                     paymentResult: paymentResponse.data
                 });
             
-        } catch (error: any) {
-            console.error('Error en el pago:', error.response?.data || error.message);
-            res.status(500).send( error.message);
-        }
+            } catch (error: any) {
+                console.error('Error en el pago:', error.response?.data || error.message);
+                res.status(500).send( error.message);
+            }
 });
 export default router;
 
