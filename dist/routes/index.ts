@@ -136,7 +136,7 @@ router.post('/payments', async function (req, res, next) {
             
         } catch (error: any) {
             console.error('Error en el pago:', error.response?.data || error.message);
-            res.status(500).send('Error al procesar el pago');
+            res.status(500).send( error.message);
         }
 });
 export default router;
