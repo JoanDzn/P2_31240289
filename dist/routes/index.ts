@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/pagos', function(req, res) {
+router.get('/payments', function(req, res) {
     res.render('pagos', { title: 'Compra del Servicio' });
 });
 
