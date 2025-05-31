@@ -1,9 +1,6 @@
 import express from 'express';
 import path from 'path';
 import indexRouter from './routes/index';
-import db from './models/contacto';
-import contacto from './models/contacto';
-
 const app = express();
 const port = 3000;
 

@@ -11,7 +11,7 @@ router.get('/', (req: Request, res: Response) => {
   res.render('index', { title: 'MoviGo!' });
 });
 
-router.get('/pagos', function (req: Request, res: Response) {
+router.get('/payments', function (req: Request, res: Response) {
   res.render('pagos', { title: 'Compra del Servicio' });
 });
 
@@ -37,7 +37,7 @@ router.post('/contacto', function(req: Request, res: Response, next:NextFunction
 });
 
 
-router.post('/pagos', function(req: Request, res: Response, next:NextFunction){
+router.post('/payments', function(req: Request, res: Response, next:NextFunction){
   const {nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda} = req.body;
   
 

@@ -10,12 +10,12 @@ dotenv.config();
 let router: Router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Hola Mundo :P' });
+    res.render('index', { title: 'Hola Mundo :P', siteKey: process.env.RECAPTCHA_SITE_KEY  });
 });
 
 
 router.get('/payments', function(req, res) {
-    res.render('pagos', { title: 'Compra del Servicio' });
+    res.render('pagos', { title: 'Compra del Servicio', siteKey: process.env.RECAPTCHA_SITE_KEY });
 });
 
 interface contacto {
@@ -59,9 +59,11 @@ router.post('/contacto', async function (req, res, next) {
         rejectUnauthorized: false
     }
     });
-    const siteKey = process.env.RECAPTCHA_SECRET_KEY;
+    const secretkey = process.env.RECAPTCHA_SECRET_KEY;
     const token = req.body['g-recaptcha-response'];
-    const recaptchaResponse = await axios.post<RecaptchaResponse>(`https://www.google.com/recaptcha/api/siteverify?secret=${siteKey}&response=${token}`);
+    const recaptchaResponse = await axios.post<RecaptchaResponse>(`https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}`);
+
+    if (recaptchaResponse.data.success===true) {
 
         const { nombre, email, telefono, mensaje } = req.body;
         console.log(req.body);
@@ -81,26 +83,27 @@ router.post('/contacto', async function (req, res, next) {
         
     
 
-    contacto.create1(nombre, email, telefono, mensaje, pais)
-        .then(async (id) => {
+        contacto.create1(nombre, email, telefono, mensaje, pais)
+            .then(async (id) => {
 
-            const mailOptions = {
-                from: 'neverandagency@gmail.com',
-                to: 'programacion2ais@yopmail.com',
-                subject: 'Nuevo contacto desde MoviGo!',
-                text: `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}\nPais: ${pais}\nIP: ${ip}`,
-            };
+                const mailOptions = {
+                    from: 'neverandagency@gmail.com',
+                    to: 'programacion2ais@yopmail.com',
+                    subject: 'Nuevo contacto desde MoviGo!',
+                    text: `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}\nPais: ${pais}\nIP: ${ip}`,
+                };
 
-            try {
-                await transporter.sendMail(mailOptions);
-                res.redirect('/');
-                console.log('Contacto guardado y correo enviado');
-            } catch (error) {
-                console.error('Error al guardar el contacto o enviar el correo:', error);
-                return res.status(500).send('Error al guardar el contacto o enviar el correo');
-            }
-        })
-    });
+                try {
+                    await transporter.sendMail(mailOptions);
+                    res.redirect('/');
+                    console.log('Contacto guardado y correo enviado');
+                } catch (error) {
+                    console.error('Error al guardar el contacto o enviar el correo:', error);
+                    return res.status(500).send('Error al guardar el contacto o enviar el correo');
+                }
+            })
+    }
+});
 
 
 
