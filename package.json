@@ -6,7 +6,7 @@
     "build": "tsc && npm run copy-views",
     "copy-views": "cp -r src/views dist/views",
     "start": "nodemon dist/server.ts",
-    "dev": "ts-node src/app.ts"
+    "dev": "ts-node dist/app.ts"
   },
   "dependencies": {
     "axios": "^1.9.0",

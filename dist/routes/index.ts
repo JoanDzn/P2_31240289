@@ -10,7 +10,7 @@ dotenv.config();
 let router: Router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Hola Mundo :P', siteKey: process.env.RECAPTCHA_SITE_KEY  });
+    res.render('index', { title: 'MoviGo!', siteKey: process.env.RECAPTCHA_SITE_KEY  });
 });
 
 
