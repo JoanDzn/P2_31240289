@@ -2,11 +2,11 @@ import db from './sqlite';
 
 
 export default {
-    create1 (nombre: any, email:any, telefono:any, mensaje:any) {
+    create1 (nombre: any, email:any, telefono:any, mensaje:any, pais:any) {
         return new Promise((resolve, reject) => {
-            const sql1 = `INSERT INTO contacto (id, nombre, email, telefono, mensaje) VALUES (?, ?, ?, ?)`;
+            const sql1 = `INSERT INTO contacto (id, nombre, email, telefono, mensaje, pais) VALUES (?, ?, ?, ?, ?)`;
 
-            db.run(sql1, [nombre, email, telefono, mensaje], function (error) {
+            db.run(sql1, [nombre, email, telefono, mensaje, pais], function (error) {
                 if (error) reject(error);
             else resolve(this.lastID);
             });
