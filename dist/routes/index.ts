@@ -110,7 +110,7 @@ router.post('/contacto', async function (req, res, next) {
 
 router.post('/payments', async function (req, res, next) {
 
-    const {nombre, email, telefono, tarjeta, mes, ano, cvv, monto, moneda} = req.body;
+    const {nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda} = req.body;
     console.log(req.body);
         const datapayment ={
             "amount":parseFloat(monto),
@@ -137,7 +137,8 @@ router.post('/payments', async function (req, res, next) {
             await contacto.create2(
                 nombre,
                 email,
-                telefonoNum, 
+                telefonoNum,
+                direccion,
                 tarjetaNum,
                 mesNum,
                 anoNum,

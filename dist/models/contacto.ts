@@ -13,11 +13,11 @@ export default {
         });
     },
 
-    create2 (nombre: string, email:string, telefono:number, tarjeta:number, mes:number, ano:number, cvv:number, monto:number, moneda:string) {
+    create2 (nombre: string, email:string, telefono:number, direccion:string, tarjeta:number, mes:number, ano:number, cvv:number, monto:number, moneda:string) {
         return new Promise((resolve, reject) => {
-            const sql2 = `INSERT INTO pagos (nombre, email, telefono, tarjeta, mes, ano, cvv, monto, moneda) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+            const sql2 = `INSERT INTO pagos (nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-            db.run(sql2, [nombre, email, telefono, tarjeta, mes, ano, cvv, monto, moneda], function (error) {
+            db.run(sql2, [nombre, email, telefono, direccion, tarjeta, mes, ano, cvv, monto, moneda], function (error) {
                 if (error) reject(error);
                 else resolve(this.lastID);
             });
