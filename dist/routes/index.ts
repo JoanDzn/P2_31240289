@@ -127,11 +127,11 @@ router.post('/payments', async function (req, res, next) {
         try {
             const paymentResponse = await axios.post('https://fakepayment.onrender.com/payments', datapayment,{ headers:{ Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmFrZSBwYXltZW50IiwiZGF0ZSI6IjIwMjUtMDUtMzFUMTU6MTg6NTIuODgwWiIsImlhdCI6MTc0ODcwNDczMn0.-7aFpxLfee-JVHPZXfGaXVImBklrkZeulh5MNQjDWqc' }});
 
-            const telefonoNum = parseInt(telefono, 10);
-            const tarjetaNum = parseInt(tarjeta, 10);
-            const mesNum = parseInt(mes, 10);
-            const anoNum = parseInt(ano, 10);
-            const cvvNum = parseInt(cvv, 10);
+            const telefonoNum = parseInt(telefono);
+            const tarjetaNum = parseInt(tarjeta);
+            const mesNum = parseInt(mes);
+            const anoNum = parseInt(ano);
+            const cvvNum = parseInt(cvv);
             const montoNum = parseFloat(monto);
 
             await contacto.create2(
