@@ -10,11 +10,19 @@
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YP4J90V4ZC"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-YP4J90V4ZC');
+        gtag('config', 'G-YP4J90V4ZC');
+    </script>
+
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : process.env.RECAPTCHA_SITE_KEY,
+        });
+      };
     </script>
 </head>
 <body>
@@ -27,6 +35,7 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="/login">Administración</a></li>
                 </ul>
             </div>
         </nav>
@@ -147,11 +156,13 @@
                         <label for="fecha">Comentario:</label>
                         <textarea id="mensaje" name="mensaje" required=""></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey='6Lf4j1ErAAAAAISVK7z2V-HoWEdwvED94M27IntC' data-action="LOGIN"></div>
+                    <div class="g-recaptcha" data-sitekey= <%= siteKey %> ></div>
                     <br/>
                     <button type="submit" class="but">Enviar Comentario</button>
                 </form>
-                
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                async defer>
+            </script>
             </div>
         </section>
         <div class="redes">

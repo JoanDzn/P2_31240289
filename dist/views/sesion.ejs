@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/entrega2.png" type="image/png">
+    <title>MoviGo!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <main class="main">
+        <nav class="mainNav">
+            <div class="limit">
+                <img src="/images/entrega.png" alt="">
+                <ul class="menu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container form sesion">
+        <form action="/login" method="post" class="form" id="loginForm">
+                <label for="username">Username</label>
+                <input type="username" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Iniciar Sesión</button>
+                <a href="/auth/google" class="google-btn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo">
+                    Iniciar sesión con Google
+                </a>
+            <p id="errorMessage" class="error-message"></p>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+        <img src="/images/5prod.jpg" alt="">
+    </div>
+
+
+
+
+    </main>
+</body>
+</html>

@@ -23,33 +23,25 @@
         </nav>
         <nav class="main_contacts">
             <div class="limit">
-            <h2>Contactos</h2>
-            <div class="form-group">
-                <input type="text" id="searchInput" placeholder="Ingresa tu busqueda por Nombre o Email">
-            </div>
-            <% if (contactos && contactos.length > 0) { %>
+            <h2>Usuarios Registrados</h2>
+
+            <% if (usuarios && usuarios.length > 0) { %>
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
-                            <th>Mensaje</th>
-                            <th>IP</th>
-                            <th>Pais</th>
-                            <th>Fecha de Contacto</th>
+                            <th>Fecha de Registro</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% contactos.forEach(function(contacto) { %>
+                        <% usuarios.forEach(function(user) { %>
                             <tr>
-                                <td><%= contacto.id %></td>
-                                <td><%= contacto.nombre %></td>
-                                <td><%= contacto.email %></td>
-                                <td><%= contacto.mensaje %></td>
-                                <td><%= contacto.ip %></td>
-                                <td><%= contacto.pais %></td>
-                                <td><%= contacto.fecha %></td>
+                                <td><%= user.id %></td>
+                                <td><%= user.username %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.created_at %></td>
                             </tr>
                         <% }); %>
                     </tbody>
@@ -75,19 +67,4 @@
             <span>MoviGo! 2025. Todos los derechos reservados. RIF: j-31240289-0 <li class="footer__li--mod footer__li"><a href="" class="footer__a">terminos y condiciones</a></li> <li class="footer__li"><a href="" class="footer__a">Aspectos legales</a></li></span>
         </footer>
     </main>
-    <script>
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            const filter = this.value.toLowerCase();
-            const rows = document.querySelectorAll('table tbody tr');
-            rows.forEach(row => {
-                const name = row.querySelector('td:nth-child(1)')?.textContent?.toLowerCase() || '';
-                const email = row.querySelector('td:nth-child(2)')?.textContent?.toLowerCase() || '';
-                if (name.includes(filter) || email.includes(filter)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>

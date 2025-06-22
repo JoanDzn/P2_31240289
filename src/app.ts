@@ -8,20 +8,23 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 
 import bodyParser from 'body-parser';
-const session = require('express-session');
-
+import session from 'express-session';
+import passport from 'passport';
+import './auth/google';
 const app = express();
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 app.use(session({
   secret:'secret-key',
   resave: false,
   saveUninitialized: false,
 }))
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
