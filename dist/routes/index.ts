@@ -20,7 +20,7 @@ dotenv.config();
 let router: Router = express.Router();
 
 router.use(session({
-    secret:'process.env.secretKeySession',
+    secret:process.env.GOOGLE_CLIENT_SECRET! ,
     resave: false,
     saveUninitialized: false,
 }));
