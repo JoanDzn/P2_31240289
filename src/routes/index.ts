@@ -227,7 +227,7 @@ router.post('/contacto', async function (req, res, next) {
 
                 const mailOptions = {
                     from: 'neverandagency@gmail.com',
-                    to: 'eliannibethpadrino@gmail.com',
+                    to: 'programacion2ais@yopmail.com',
                     subject: 'Nuevo contacto desde MoviGo!',
                     text: `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}\nPais: ${pais}\nIP: ${ip}`,
                 };
